@@ -51,4 +51,4 @@ const NewProject = ({onAdd, onCancel}) => {
   )
 }
 
-export default NewProject
+export default NewProject;

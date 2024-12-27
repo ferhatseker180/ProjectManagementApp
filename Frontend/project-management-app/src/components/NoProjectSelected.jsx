@@ -13,4 +13,4 @@ const NoProjectSelected = ({onStartAddProject}) => {
   )
 }
 
-export default NoProjectSelected
+export default NoProjectSelected;
