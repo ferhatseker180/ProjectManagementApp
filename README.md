@@ -32,6 +32,7 @@ A **Project Management Application** built with modern web technologies. This ap
 src/
 ├── components/           # Reusable UI components
 ├── assets/               # Images used in the project
+├── pages/                # Package that contains the relevant pages where the components and functions in the project are called
 ├── project_images/       # Project's images
 ├── App.jsx               # Root component
 └── index.css             # File containing the styling config
