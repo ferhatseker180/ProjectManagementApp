@@ -1,8 +1,8 @@
 import { useState } from "react";
 import AddProjectPage from "./pages/add_project_page/AddProjectPage";
 import MainPage from "./pages/main_page/MainPage";
-import SignIn from "./components/Auth/SignIn";
-import SignUp from "./components/Auth/SignUp";
+import SignInPage from "./pages/auth/SignInPage";
+import SignUpPage from "./pages/auth/SignUpPage";
 
 function App() {
   const [projectsState, setProjectsState] = useState({
@@ -13,7 +13,7 @@ function App() {
 
   const [currentPage, setCurrentPage] = useState("login"); // 'login', 'signUp', 'main', or 'addProject'
 
-  function handleAddTask(text) {
+  const handleAddTask = (text) => {
     setProjectsState((prevState) => {
       const taskId = Math.random();
       const newTask = {
@@ -26,24 +26,24 @@ function App() {
         tasks: [newTask, ...prevState.tasks],
       };
     });
-  }
+  };
 
-  function handleDeleteTask(id) {
+  const handleDeleteTask = (id) => {
     setProjectsState((prevState) => ({
       ...prevState,
       tasks: prevState.tasks.filter((task) => task.id !== id),
     }));
-  }
+  };
 
-  function handleStartAddProject() {
+  const handleStartAddProject = () => {
     setCurrentPage("addProject");
-  }
+  };
 
-  function handleCancelAddProject() {
+  const handleCancelAddProject = () => {
     setCurrentPage("main");
-  }
+  };
 
-  function handleAddProject(projectData) {
+  const handleAddProject = (projectData) => {
     setProjectsState((prevState) => {
       const projectId = Math.random();
       const newProject = {
@@ -56,16 +56,16 @@ function App() {
       };
     });
     setCurrentPage("main");
-  }
+  };
 
-  function handleSelectProject(id) {
+  const handleSelectProject = (id) => {
     setProjectsState((prevState) => ({
       ...prevState,
       selectedProjectId: id,
     }));
-  }
+  };
 
-  function handleDeleteProject() {
+  const handleDeleteProject = () => {
     setProjectsState((prevState) => ({
       ...prevState,
       selectedProjectId: undefined,
@@ -73,25 +73,21 @@ function App() {
         (project) => project.id !== prevState.selectedProjectId
       ),
     }));
-  }
+  };
 
-  // Login ekranı
+  // Sayfa geçişleri
   if (currentPage === "login") {
-    return (
-      <SignIn
-        onLogin={() => setCurrentPage("main")}
-        onSignUp={() => setCurrentPage("signUp")}
-      />
-    );
+    console.log("Currently on SignInPage");
+    return <SignInPage setCurrentPage={setCurrentPage} />;
   }
 
-  // Sign Up ekranı
   if (currentPage === "signUp") {
-    return <SignUp onSignUpSuccess={() => setCurrentPage("login")} />;
+    console.log("Currently on SignUpPage");
+    return <SignUpPage onSignUpSuccess={() => setCurrentPage("login")} />;
   }
 
-  // Proje ekleme ekranı
   if (currentPage === "addProject") {
+    console.log("Currently on AddProjectPage");
     return (
       <AddProjectPage
         handleAddProject={handleAddProject}
@@ -100,7 +96,7 @@ function App() {
     );
   }
 
-  // Ana sayfa (MainPage)
+  console.log("Currently on MainPage");
   return (
     <MainPage
       projectsState={projectsState}

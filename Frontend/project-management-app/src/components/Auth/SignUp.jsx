@@ -1,37 +1,6 @@
 import React, { useState } from "react";
 
-export default function SignUp({ onSignUpSuccess }) {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (formData.password !== formData.confirmPassword) {
-      setErrorMessage("Passwords do not match!");
-      return;
-    }
-
-    console.log("Sign-up successful:", formData);
-    setErrorMessage("");
-    alert("Sign-up successful!");
-    onSignUpSuccess(); // Login sayfasına yönlendirir
-  };
-
+export default function SignUp({ formData, handleChange, handleSubmit, errorMessage }) {
   return (
     <div className="h-screen flex justify-center items-center bg-gray-100">
       <form
