@@ -1,8 +1,36 @@
-# React + Vite
+# Project Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **Project Management Application** built with modern web technologies. This application allows users to manage projects and tasks effectively, offering an intuitive and responsive interface.
 
-Currently, two official plugins are available:
+<img src="https://raw.githubusercontent.com/ferhatseker180/ProjectManagementApp/refs/heads/main/Frontend/project-management-app/src/project_images/Main-menu.PNG"> 
+<img src="https://raw.githubusercontent.com/ferhatseker180/ProjectManagementApp/refs/heads/main/Frontend/project-management-app/src/project_images/save-project.PNG"> 
+<img src="https://raw.githubusercontent.com/ferhatseker180/ProjectManagementApp/refs/heads/main/Frontend/project-management-app/src/project_images/final.PNG"> 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 🔧 **Technologies Used**
+
+- **React**: Component-based UI library for building the user interface.
+- **Tailwind CSS**: Utility-first CSS framework for styling and responsive design.
+- **React Router**: Enables navigation between application pages.
+
+---
+
+## 🚀 **Features**
+
+- **Project Management**: Create, edit, and delete projects with ease.
+- **Task Management**: Organize tasks related to each project efficiently.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+
+---
+
+## 📁 **Project Structure**
+
+```plaintext
+src/
+├── components/           # Reusable UI components
+├── assets/               # Images used in the project
+├── project_images/       # Project's images
+├── App.jsx               # Root component
+└── index.css             # File containing the styling config
+└── main.jsx
